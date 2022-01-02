@@ -1,0 +1,1054 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link rel="shortcut icon" href="/img/fevicon.png?" />
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+      integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+      crossorigin="anonymous"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/css/ol.css"
+      type="text/css"
+    />
+    <script
+      type="text/javascript"
+      async=""
+      src="https://www.gstatic.com/recaptcha/releases/VZKEDW9wslPbEc9RmzMqaOAP/recaptcha__en.js"
+      crossorigin="anonymous"
+      integrity="sha384-wyvEVSrAxo98MJGE0PuR2ri6k5qurqxA2/a+2Rdj2zI1XHJHSGLsoRS5ADozusAM"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/build/ol.js"></script>
+    <script
+      src="https://www.google.com/recaptcha/api.js"
+      async=""
+      defer=""
+    ></script>
+    <title>Sun Grace School</title>
+    <style>
+      /* preloader */
+
+.tb-preloader {
+    position:sticky;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2000;
+    background: #fff;
+    opacity: 1;
+}
+
+.tb-preloader .tb-preloader-in {
+    height: 100px;
+    width: 100px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    margin: -50px 0 0 -50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.tb-preloader .tb-preloader-in:before {
+    content: '';
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-top: 5px solid transparent;
+    border-right: 5px solid #0e7cbf;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid transparent;
+    border-radius: 50%;
+    -webkit-animation: rotate360 1s linear both infinite;
+    animation: rotate360 1s linear both infinite
+}
+
+@-webkit-keyframes rotate360 {
+    0% {
+        -webkit-transform: rotateZ(0deg);
+        -ms-transform: rotateZ(0deg);
+        transform: rotateZ(0deg)
+    }
+    100% {
+        -webkit-transform: rotateZ(360deg);
+        -ms-transform: rotateZ(360deg);
+        transform: rotateZ(360deg)
+    }
+}
+
+@keyframes rotate360 {
+    0% {
+        -webkit-transform: rotateZ(0deg);
+        -ms-transform: rotateZ(0deg);
+        transform: rotateZ(0deg)
+    }
+    100% {
+        -webkit-transform: rotateZ(360deg);
+        -ms-transform: rotateZ(360deg);
+        transform: rotateZ(360deg)
+    }
+}
+
+.fade-out {
+    animation: fadeOut ease 1s;
+    -webkit-animation: fadeOut ease 1s;
+    -moz-animation: fadeOut ease 1s;
+    -o-animation: fadeOut ease 1s;
+    -ms-animation: fadeOut ease 1s;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@-o-keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@-ms-keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
+/* horizontal slider */
+
+.slider {
+    background: rgba(255, 255, 255, 0.32);
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
+    margin: 0px 11px;
+    padding: 3px 5px;
+    overflow: hidden;
+    height: 90px;
+    border-radius: 20px;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+}
+
+.slider .slidetr {
+    animation: scroll 60s linear infinite;
+    display: flex;
+    width: calc(60px * 18);
+}
+
+.slider .slide {
+    width: 100%;
+    padding: 0 15px;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-250px * 14));
+    }
+}
+
+
+/* Custom Colors */
+.primary-blue {
+    background-color: #367dc8 !important;
+}
+
+.primary-blue-text {
+    color: #367dc8 !important;
+}
+
+.primary-green {
+    background-color: #99c122 !important;
+}
+
+.primary-green-text {
+    color: #99c122 !important;
+}
+
+header {
+    background: url("/photos/home-background.svg");
+    background-size: cover;
+    background-position: top;
+    min-height: 100vh;
+}
+
+header .transparent {
+    /* webkit-box-shadow: none !important;
+    box-shadow: none !important; */
+}
+
+header .background {
+    /* background: url("/img/home-banner.svg"); */
+    /* background-color: white;
+    background-size: cover;
+    background-position: top; */
+}
+
+header .brand-logo img {
+    height: 48px;
+    margin-top: 5px;
+}
+
+header nav ul li a {
+    color: #424242;
+}
+
+header .header-card {
+    min-height: 60vh;
+    margin-top: 25px;
+}
+
+
+/* .window-card.card {
+    background-color: rgba(63, 81, 181, 0.7);
+}
+
+.window-card.card .window-title {
+    background-color: rgba(63, 81, 181, 0.7);
+    padding: 10px;
+}
+
+.window-card.card .window-title .title-action {
+    padding: 5px;
+} */
+
+.btn-floating.btn-ex-small {
+    width: 20px;
+    height: 20px;
+}
+
+.btn-floating.btn-ex-small i {
+    line-height: 18px;
+    font-size: 0.9rem;
+}
+
+.home-banner {
+    height: 100%;
+    background: rgba(238, 238, 238, .50) !important;
+}
+
+.banner-content {
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.banner-content h3 {
+    color: #367dc8 !important;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 55px;
+    /* margin-top: 90px; */
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.banner-content h3 span {
+    color: #615e5f;
+}
+
+.banner-content h4 {
+    color: #367dc8 !important;
+    font-size: 35px;
+    font-weight: 700;
+    line-height: 45px;
+    /* margin-top: 90px; */
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.banner-content h5 {
+    text-align: center;
+    color: #615e5f;
+}
+
+.banner-content p {
+    margin-top: 20px;
+}
+
+
+/* .about-card-row {
+    display: -webkit-flex;
+display: -ms-flexbox;
+display: flex;
+overflow: hidden;
+}
+
+.about-card-row .col{
+    flex: 1;
+}
+
+.about-card-row .card{
+    height: 101%;
+    margin: 1px;
+} */
+
+
+/* .header-area {
+    padding: 180px 0 192px 0;
+    background: url(../img/bgimg1.jpg) no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.header-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: -moz-linear-gradient(55deg, #75b2f0 0%, #75f094);
+    background-image: -webkit-linear-gradient(55deg, #75b2f0 0%, #75f094);
+    background-image: -ms-linear-gradient(55deg, #75b2f0 0%, #75f094);
+    content: '';
+    opacity: .9;
+}
+
+.header-area.gradinet-bg:after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: -moz-linear-gradient(55deg, #75b2f0 0%, #75f094);
+    background-image: -webkit-linear-gradient(55deg, #75b2f0 0%, #75f094);
+    background-image: -ms-linear-gradient(55deg, #75b2f0 0%, #75f094);
+    content: '';
+    opacity: .9;
+} */
+
+.section {
+    padding-top: 4vw;
+    padding-bottom: 4vw;
+}
+
+.parallax-container {
+    max-height: 300px;
+}
+
+.tabs .indicator {
+    background-color: #99c122;
+}
+
+.tabs .tab a:focus,
+.tabs .tab a:focus.active {
+    background: transparent;
+}
+
+.input-field label.active,
+.input-field .prefix.active {
+    color: #99c122 !important;
+}
+
+input[type=text]:not(.browser-default):focus:not([readonly]),
+input[type=email]:not(.browser-default):focus:not([readonly]),
+textarea.materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #99c122 !important;
+    web-box-shadow: 0 1px 0 0 #99c122 !important;
+    box-shadow: 0 1px 0 0 #99c122 !important;
+}
+
+.location-map {
+    height: 400px;
+    width: 100%;
+}
+
+.contact-details {
+    margin-top: 30px;
+}
+
+.contact-details p {
+    margin-left: 3rem;
+    font-size: 16px;
+    line-height: 2rem;
+}
+
+.justify-align {
+    text-align: justify;
+}
+
+.contact-details .input-field .prefix {
+    top: 0px;
+}
+
+.captcha-container {
+    margin-left: 3rem;
+}
+
+@media screen and (max-width: 670px) {
+    header {
+        min-height: 500px;
+    }
+    /* header .background {
+        background: white;
+    } */
+    header nav a {
+        color: #1a237e;
+    }
+    .parallax-container {
+        max-height: 40vw;
+    }
+}
+    </style>
+  </head>
+  <body onload="loadingPreloader()">
+    <div id="preloader" class="tb-preloader fade-out" style="display: none">
+      <div id="preloader-in" class="tb-preloader-in">
+        <img src="https://sungraceschool.in/wp-content/uploads/2016/11/center_logo.png" width="65" alt="loader-logo" />
+      </div>
+    </div>
+
+    <header class="scrollspy" id="home">
+      <div class="navbar-fixed">
+        <nav class="nav-wrapper grey lighten-3 transparent">
+          <div class="container">
+            <a href="#home" class="brand-logo">
+              <img class="" src="./photos/popup_logo.png" alt="" />
+            </a>
+            <a
+              href="#"
+              class="sidenav-trigger grey-text text-darken-3"
+              data-target="mobile-nav"
+            >
+              <i class="material-icons">menu</i>
+            </a>
+            <ul class="right hide-on-med-and-down">
+              <li><a href="#about" class="active">The School</a></li>
+              <li><a href="#spfe">Special Feature</a></li>
+              <li><a href="#managment">Managment</a></li>
+              <li><a href="#principal">Principal Desk</a></li>
+              <li><a href="#contact">Contacts</a></li>
+            </ul>
+            <ul class="sidenav gray lighten-2" id="mobile-nav">
+              <li><a href="#about" class="active">The School</a></li>
+              <li><a href="#spfe">Special Feature</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#Skils">Skils</a></li>
+              <li><a href="#contact">Contacts</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="container" style="margin-top: 90px;">
+        <div class="header-card">
+          <div class="row">
+            <div class="col s12 l6">
+              <div
+                class="carousel carousel-slider center"
+                style="height: 400px"
+              >
+                <div
+                  class="carousel-item transparent"
+                  href="#one!"
+                  style="
+                    z-index: -2;
+                    opacity: 1;
+                    visibility: visible;
+                    transform: translateX(0px) translateX(-606px)
+                      translateZ(0px);
+                  "
+                >
+                  <div class="home-banner">
+                    <div class="banner-content">
+                      <h3>Sun Grace <span>School</span></h3>
+                      <h5>UJJVAL Education Trust.</h5>
+                      <p>
+                        Established in 1997, today the school has grown into a family of 1700 students and 50 dedicated and professional teachers.We believe that good education is the high road to each individual and national progress.The school’s mission and quality is managed through closely integrated, innovative and dedicated team, which strength in the matrix by proper network.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="carousel-item transparent"
+                  href="#two!"
+                  style="
+                    transform: translateX(0px) translateX(-303px)
+                      translateZ(0px);
+                    z-index: -1;
+                    opacity: 1;
+                    visibility: visible;
+                  "
+                >
+                  <div class="home-banner">
+                    <div class="banner-content">
+                      <h4>Highly Qualified Experience Teacher</h4>
+                     
+                      <p>When you need to get it there fast, Transfreight can organise overnight air freight Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque quis, sunt quas quae explicabo in illo soluta impedit repellat culpa, commodi atque, sapiente dolorem sed fuga. Assumenda a quidem quaerat.</p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="carousel-item transparent active"
+                  href="#three!"
+                  style="
+                    transform: translateX(0px) translateX(0px) translateX(0px)
+                      translateZ(0px);
+                    z-index: 0;
+                    opacity: 1;
+                    visibility: visible;
+                  "
+                >
+                  <div class="home-banner">
+                    <div class="banner-content">
+                      <h4>A Fleet Of Its Own Bus</h4>
+                      <h5>
+                       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis nisi minus quasi ipsum placeat. Quis mollitia, in ipsum natus vero architecto nisi nostrum harum dolores odio saepe minus iste hic.
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="carousel-item transparent"
+                  href="#four!"
+                  style="
+                    transform: translateX(0px) translateX(303px) translateZ(0px);
+                    z-index: -1;
+                    opacity: 1;
+                    visibility: visible;
+                  "
+                >
+                  <div class="home-banner">
+                    <div class="banner-content">
+                      <h4>Presonal attention To Every Child </h4>
+                      <p>
+                        Delivering within city limits is one thing, but when your customers are located in outer Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit molestiae aliquam odio doloribus distinctio magni consequuntur, est ex. Aut quisquam mollitia minus maxime dolorem quae doloribus quasi modi unde incidunt.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+            <div class="col s12 l5 offset-l1">
+              <img
+                class="responsive-img"
+                src="https://sungraceschool.in/wp-content/uploads/2016/11/center_logo.png"
+                style="margin: 60px ;"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="section container scrollspy" id="about">
+      <div class="row">
+        <div class="col s12 l12">
+          <h3 class="primary-blue-text">About Us</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12 l12 justify-align">
+          <p class="">
+            We had our humble Starting in the year 1997 under
+          </p>
+          <p class="">
+            Mr. Jaysukh Bhai Kathiriya,</p>
+
+          <p class="">
+            a man of high ideas is the Pivot of this institution. Thirteen years of diligent work and Sacrifice has made us the proud owners of this institution.
+          </p>
+          <p class="">
+            The school is a co-educational institution affiliated to Gujarat State Education Board. We have got two mediums Gujarati and English with more than 2800 students. We conduct classes from Nursery to 12th standard.
+          </p>
+          <p class="">
+            The dream of having our own school building was fulfilled in 2003. We have got a magnificent structure which is earth quake resistant.
+          </p>
+          <p class="">The ground floor is adorned by a statue of goddess Saraswathi and consists of Principal’s office, Reception, Clerk’s office, Staff room and management room.</p>
+          <p class="">Our developmental centres like Computer room, Audio visual room and Laboratory beautify the underground.</p>
+          <p>First & Second floor is the wonderland of our little stars. The main stream education goes on in the third and fourth floors. Under ground is the library of books & toys.</p>
+         <p> Airy and well lit class rooms with CC Cameras with recording are our attraction. Absolutely clean and hygienic environment within entire campus is maintained. This is the unique institution with all facilities one can dream of.
+             <br>
+            <b> Future Project… </b> 
+        </p>
+        <p>Development of Library. <br>
+            Field visit for each & every class.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12 l4">
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title primary-blue-text">AIM</span>
+              <p>
+                Is to achieve 100% Parents and Child trust by giving them personal
+                attention &amp; working on to get thier desired result .
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 l4">
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title primary-blue-text">VISION</span>
+              <p>
+                Is to provide best Teaching  services to our Child by using
+                latest technologies and best teaching methods .
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 l4">
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title primary-blue-text">MISSION</span>
+              <p>
+                Is to deliver maximum education to our child helping them to
+                achieve  in thier life and making them diffrent from others.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+     
+    </section>
+
+    <div class="parallax-container" style="background-image: 'img/bgimg1.jpg'">
+      <div class="parallax header-bg">
+        <img
+          src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+          alt=""
+          class="responsive-img"
+          style="opacity: 1"
+        />
+      </div>
+    </div>
+    <section class="section container scrollspy" id="spfe">
+        <div class="row">
+          <div class="col s12 l12">
+            <h3 class="primary-blue-text">Special Feature</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s12 l12 justify-align">
+            <p class="">
+                <b>Trained Teachers :</b> <br>
+                Well qualified, trained and experienced teaching staff to inspire the young minds. Regular training programmes to upgrade the knowledge of teachers by experts.
+            </p>
+            <p class="">
+              <b>Computer Education : </b> <br>
+              We have one of the most modern computer lab. Computer practice is provided to each and every student from 1st standard.
+            </p>
+  
+            <p class="">
+                <b>Library : </b> <br>
+                A well developed library with good collection of books and magazines to enrich the knowledge  
+              </p>
+            <p class="">
+                <b>Extra Curricular Activities : </b> <br>
+                In the quest for developing a well rounded personality, the school encourage the students to participate in variety of activities and competitions like drawing, quiz, singing, story-writing, debate, essay writing, Rangoli, Garba, Sloka etc.
+              </p>
+            <p class="">
+                <b>Celebration of all the Festivals : </b> <br>
+
+                To maintain unity in diversity we celebrate all the main festivals of our country such as Independence Day, Republic Day. Sports Day, Children’s Day, Teacher’s Day, Navratri, Dushera, Diwali, Holi, Janmashtmi, Christ
+             </p>
+            <p>
+                <b>Transport Facility :</b> <br>
+                Door to door transport facility to all the students of the school.
+            </p>
+            <p><b>Music & Dance classes :</b> <br>
+                Music and dance teachers are engaged to train the students. We are conducting various competitions of dance and music to encourage the students. Our students also participate in outside competition.</p>
+          </div>
+        </div>
+        
+       
+      </section>    
+    
+    
+
+    <div class="parallax-container">
+      <div class="parallax">
+        <img
+          src="https://media.istockphoto.com/photos/school-buses-lined-up-ready-to-pick-up-kids-picture-id1092429924?b=1&k=20&m=1092429924&s=170667a&w=0&h=g80-jd4hujUBpvRBpfxMS4--QleRpC8z_C3_nxds0YE="
+          alt=""
+          class="responsive-img"
+          style="opacity: 1"
+        />
+      </div>
+    </div>
+
+    <section class="section container scrollspy" id="managment">
+      <div class="row">
+        <div class="col s12 l12" style="margin-bottom: 0px;">
+          <h3 class="primary-blue-text" >Managment</h3>
+        </div>
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-image">
+              <img src="https://sungraceschool.in/wp-content/uploads/2016/11/trusti.jpg" style="width: 100px;text-align: center; margin-left:80px;">
+             
+            </div>
+            <div class="card-content">
+              <p><b>Trustee </b><br>
+                Smt. Sobhnaben B.Desai</p>
+            </div>
+            
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-image">
+              <img src="https://sungraceschool.in/wp-content/uploads/2016/11/mantri.jpg" style="width: 100px;text-align: center; margin-left:80px;">
+             
+            </div>
+            <div class="card-content">
+              <p><b>Mantri </b><br>
+                Shri Shankarbhai G.Patel</p>
+            </div>
+            
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-image">
+              <img src="https://sungraceschool.in/wp-content/uploads/2016/11/director.jpg" style="width: 100px;text-align: center; margin-left:80px;">
+             
+            </div>
+            <div class="card-content">
+              <p><b>Director</b><br>
+                Shri Jaysukhbhai P.Kathiriya</p>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+                
+    </section>
+    <div class="parallax-container" style="background-image: 'img/bgimg1.jpg'">
+      <div class="parallax header-bg">
+        <img
+          src="https://images.unsplash.com/photo-1495727034151-8fdc73e332a8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=865&q=80"
+          alt=""
+          class="responsive-img"
+          style="opacity: 1"
+        />
+      </div>
+    </div>
+    <section class="section container scrollspy" id="principal">
+      <div class="row">
+        <div class="col s12 l12">
+          <h3 class="primary-blue-text">Principal’s Desk</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12 l12 justify-align">
+         <p>We feel very happy to serve here true to our potential to transform the young minds in to a potential source of knowledge, energy, strength and an effective force to transform the fabric of society. A dedicated team of teachers, administrative staff, aware and co-operative parents and an efficient management with great vision form a unified sungrace team are making efforts to achieve the same.</p>
+       
+         <p style="text-align: right;"> ~ Surekha Yadav <br>Principal</p>
+        </div>
+      </div>
+      
+        
+      </div>
+     
+    </section>
+   
+    <div class="parallax-container" style="background-image: 'img/bgimg1.jpg'">
+      <div class="parallax header-bg">
+        <img
+          src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c2Nob29sfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+          alt=""
+          class="responsive-img"
+          style="opacity: 1"
+        />
+      </div>
+    </div>
+    <section class="section container scrollspy" id="contact">
+      <div class="row">
+        <div class="col s12 l12">
+          <h3 class="primary-blue-text">Contact Us</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12 l12">
+          <h5 class="grey-text text-lignten-1">
+            Drop a line to us. Your word is most important to us.
+          </h5>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12 l6">
+          <form id="form" action="handler.php" method="POST">
+            <div class="input-field primary-blue-text text-darken-4">
+              <i class="material-icons prefix">account_circle</i>
+              <input type="text" id="name" />
+              <label for="name">Your Name</label>
+            </div>
+            <div class="input-field primary-blue-text text-darken-4">
+              <i class="material-icons prefix">email</i>
+              <input type="email" id="email" />
+              <label for="email">Your Email</label>
+            </div>
+            <div class="input-field primary-blue-text text-darken-4">
+              <i class="material-icons prefix">edit</i>
+              <input type="text" id="subject" />
+              <label for="subject">Subject</label>
+            </div>
+            <div class="input-field primary-blue-text text-darken-4">
+              <i class="material-icons prefix">subject</i>
+              <textarea
+                id="message"
+                class="materialize-textarea"
+                style="height: 45px"
+              ></textarea>
+              <label for="message">Message</label>
+            </div>
+            <div class="input-field">
+              
+              <div class="clearfix"></div>
+            </div>
+            <div class="input-field center">
+              <button
+                class="btn primary-blue"
+                id="submitButton"
+              
+              >
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="col s12 l5 offset-l1 contact-details">
+          <div class="row">
+            <div class="col s12 l12">
+              <div class="input-field">
+                <i class="material-icons prefix primary-blue-text text-darken-4"
+                  >business</i
+                >
+                <p>
+                  20, Rd Number 2, Udhana GIDC, Udhna Udhyog Nagar, Udhna, Surat, Gujarat 394210
+                </p>
+              </div>
+              <div class="input-field">
+                <i class="material-icons prefix primary-blue-text text-darken-4"
+                  >phone</i
+                >
+                <p>+ 91 - 261 - 2278888</p>
+              </div>
+              <div class="input-field">
+                <i class="material-icons prefix primary-blue-text text-darken-4"
+                  >email</i
+                >
+                <p>
+                  <a
+                    href="mailto:info@sungraceschool.in"
+                    style="color: #000000de"
+                    >info@sungraceschool.in
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="page-footer grey lighten-3">
+      <div class="container center">
+        <a
+          href="#"
+          class="btn-floating waves-effect waves-light grey darken-3"
+        >
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a
+          href="#"
+          class="btn-floating waves-effect waves-light grey darken-3"
+        >
+          <i class="fab fa-google-plus-square"></i>
+        </a>
+        <a
+          href="#"
+          class="btn-floating waves-effect waves-light grey darken-3"
+        >
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a
+          href="#"
+          class="btn-floating waves-effect waves-light grey darken-3"
+        >
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="#" class="btn-floating waves-effect waves-light grey darken-3">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <div class="footer-copyright grey lighten-3 grey-text text-darken-3">
+        <div class="container center">© 2022 Sun Grace School</div>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script>
+      // perloader var;
+      var preloader = document.getElementById("preloader");
+
+      function loadingPreloader() {
+        preloader.classList.add("fade-out");
+        setTimeout(function () {
+          preloader.style.display = "none";
+        }, 1000);
+      }
+      
+
+      $(document).ready(function () {
+        $(window).scroll(function () {
+          $(".nav-wrapper").toggleClass(
+            "transparent",
+            $(this).scrollTop() < 50
+          );
+          $(".nav-wrapper").toggleClass("background", $(this).scrollTop() > 50);
+        });
+        $(".nav-wrapper").toggleClass(
+          "transparent",
+          $(window).scrollTop() < 50
+        );
+        $(".nav-wrapper").toggleClass("background", $(window).scrollTop() > 50);
+        $(".sidenav").sidenav();
+        $(".parallax").parallax();
+        $(".scrollspy").scrollSpy();
+        $(".tabs").tabs();
+        let instance = $(".carousel.carousel-slider").carousel({
+          fullWidth: true,
+          indicators: true,
+        });
+
+        function autoplay() {
+          instance.carousel("next");
+          setTimeout(autoplay, 4500);
+        }
+
+        setTimeout(autoplay, 4500);
+      });
+    </script>
+
+    <div
+      class="hiddendiv common"
+      style="
+        font-size: 16px;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+          Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+        line-height: normal;
+        padding: 12px 0px;
+        width: 404.641px;
+      "
+    >
+      <br />
+    </div>
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+    <div
+      style="
+        background-color: rgb(255, 255, 255);
+        border: 1px solid rgb(204, 204, 204);
+        box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 3px;
+        position: absolute;
+        transition: visibility 0s linear 0.3s, opacity 0.3s linear 0s;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 2000000000;
+        left: 0px;
+        top: -10000px;
+      "
+    >
+      <div
+        style="
+          width: 100%;
+          height: 100%;
+          position: fixed;
+          top: 0px;
+          left: 0px;
+          z-index: 2000000000;
+          background-color: rgb(255, 255, 255);
+          opacity: 0.05;
+        "
+      ></div>
+      <div
+        class="g-recaptcha-bubble-arrow"
+        style="
+          border: 11px solid transparent;
+          width: 0px;
+          height: 0px;
+          position: absolute;
+          pointer-events: none;
+          margin-top: -11px;
+          z-index: 2000000000;
+        "
+      ></div>
+      <div
+        class="g-recaptcha-bubble-arrow"
+        style="
+          border: 10px solid transparent;
+          width: 0px;
+          height: 0px;
+          position: absolute;
+          pointer-events: none;
+          margin-top: -10px;
+          z-index: 2000000000;
+        "
+      ></div>
+      <div style="z-index: 2000000000; position: relative">
+       
+      </div>
+    </div>
+  </body>
+</html>
